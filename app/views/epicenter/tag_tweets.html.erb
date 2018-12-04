@@ -1,0 +1,11 @@
+<DIV>
+	<h1><%= @tag.phrase %></h1>
+
+</DIV>
+
+<div>
+	<% @tag.tweets.order(created_at: :desc).each do |tweet| %>
+		<%= render 'layouts/tweet', tweet: tweet %>
+
+		<% end %>
+</div>
