@@ -15,15 +15,15 @@
 			<%if current_user.id != @user.id %>
 
 			<%=link_to "Follow", nowfollowing_path(id: @user.id), class: "btn btn-primary" %>
-			
+
 		<% end %>
 	<% end %>
 
 </p>
 
 <% @user.tweets.each do |tweet| %>
-	<div>
-		<p>@<%= @user.username %></p>
-		<p>@<%= @tweet.message %></p>
-	</div>
-<% end
+	
+	<%= render 'layouts/tweet', tweet: tweet %>
+
+	
+<% end %>
