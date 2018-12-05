@@ -10,8 +10,6 @@
 // Read Sprockets README (https://github.com/rails/sprockets#sprockets-directives) for details
 // about supported directives.
 //
-
-
 //= require jquery
 //= require jquery_ujs
 //= require bootstrap-sprockets
@@ -21,3 +19,16 @@
 //= require activestorage
 //= require turbolinks
 //= require_tree .
+
+
+$(document).on('turbolinks:load', function() {
+	$('#unfollow_btn').hover(function(){
+		$(this).removeClass('btn-primary');
+		$(this).addClass('btn-danger');
+		$(this).html('unfollow');
+	}, function (){
+		$(this).removeClass('btn-danger');
+		$(this).addClass('btn-primary');
+		$(this).html('Following');
+	});
+});
